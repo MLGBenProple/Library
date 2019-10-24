@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class Book extends Model
 {
@@ -12,4 +13,9 @@ class Book extends Model
         'title' => 'required',
         'author' => 'required',
     ];
+
+    public function path()
+    {
+        return '/books/'. $this->id;
+    }
 }
